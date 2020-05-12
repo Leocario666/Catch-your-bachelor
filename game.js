@@ -1250,7 +1250,7 @@ var update = function(modifier) {
                 if(ennemyTest.y > 660) {
                     ennemyTest.alive = false;
                     if(pointsTemp - 1 >= 0){
-                        pointsTemp --;
+                        pointsTemp -= 2;
                     }
                 }
             }
@@ -1347,7 +1347,6 @@ var update = function(modifier) {
                 
             }
         }
-        
         
         //win the challenge (120 secondes)
         if(parseInt((timerCompare-timerBase)/1000) >= 120) {
@@ -2121,7 +2120,6 @@ var update = function(modifier) {
         
         cpt ++;
         if(cpt == 1) {
-            
             //set the geolocalisation
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
         }
@@ -2787,7 +2785,11 @@ var render = function() {
         ctx.fillRect(0, 0, 800, 50);
         ctx.font = '24px serif';
         ctx.fillStyle = "#FFF";
-        ctx.fillText("Timer : " + parseInt((timerCompare-timerBase)/1000) + " / 120 seconds", 50, 33);
+        if(parseInt((timerCompare-timerBase)/1000) <= 120) {
+            ctx.fillText("Timer : " + parseInt((timerCompare-timerBase)/1000) + " / 120 seconds", 50, 33);
+        } else {
+            ctx.fillText("Timer : 120 / 120 seconds", 50, 33);
+        }
         ctx.fillText("Your points : " + pointsTemp, 550, 33);
     }
     
@@ -2932,7 +2934,11 @@ var render = function() {
         ctx.fillRect(0, 0, 800, 50);
         ctx.font = '24px serif';
         ctx.fillStyle = "#FFF";
-        ctx.fillText("Timer : " + parseInt((timerCompare-timerBase)/1000) + " / 120 seconds", 20, 33);
+        if(parseInt((timerCompare-timerBase)/1000) <= 120) {
+            ctx.fillText("Timer : " + parseInt((timerCompare-timerBase)/1000) + " / 120 seconds", 20, 33);
+        } else {
+            ctx.fillText("Timer : 120 / 120 seconds", 20, 33);
+        }
         ctx.fillText("Ground durability : " + groundHit + " / 3", 540, 33);
         ctx.fillText("Your points : " + pointsTemp, 305, 33);
         
