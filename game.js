@@ -348,7 +348,6 @@ groundimg.onload = function(){
 };
 groundimg.src = "images/skyGround.jpg";
 
-
 //===================================================================================
 // initialisation of variables
 //===================================================================================
@@ -424,11 +423,13 @@ var ship = { speed: 3500, hp:3};
 var dragon = { hp: 700};
 var orb = new orbObject();
 
-
 // Handle keyboard controls
 var keysDown = {};
 
-// == LISTENERS == //
+//===================================================================================
+//Key Listener
+//===================================================================================
+
 addEventListener("keydown", function (e) { keysDown[e.keyCode] = true;}, false);
 addEventListener("keyup", function (e){ delete keysDown[e.keyCode];}, false);
 
@@ -1335,7 +1336,7 @@ var update = function(modifier) {
                         
                         if(laserTest.x >= ennemyTest.x-4 && laserTest.x <= ennemyTest.x +55 && laserTest.y >= ennemyTest.y-22 && laserTest.y <= ennemyTest.y+51){
                             laserTest.alive = false;
-                            ennemyTest.life-=2;
+                            ennemyTest.life--;
                             
                             if(ennemyTest.life == 0) {
                                 ennemyTest.alive = false;
