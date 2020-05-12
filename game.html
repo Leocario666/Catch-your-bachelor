@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Catch your Bachelor</title>
+        <meta name="description" content="JS game projet from 3 students of the HES SO">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="images/logo_onglet.png" type="image/x-icon">
+        
+        <!-- include jQuery library --> 
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        
+        <script src="json/Highscore.json" type="application/javascript"></script>
+        
+    </head>
+
+    <body>        
+        
+        <header>
+        
+            <h1>Catch your Bachelor</h1>
+        
+            <h4>
+                <a href="https://www.linkedin.com/in/nicolas-constantin-561411171/" target="_blank">Nicolas Constantin</a>
+                - 
+                <a href="https://www.linkedin.com/in/diogo-d-almeida-349a45171/" target="_blank">Diogo D'Almeida</a>
+                - 
+                <a href="https://www.linkedin.com/in/sarah-morard-33ba45171/" target="_blank">Sarah Morard</a>
+            </h4>
+            
+            
+            
+        </header>
+        
+        <div id="forSmallScreen">
+            <p>This game is disable for small screen.</p>
+        </div>
+        
+        
+        <div class="workspace">
+            <canvas id="myCanvas" width="800" height="600">Sorry, your browser can't read this game                 
+            </canvas>
+            <script>
+                var myHighscore = JSON.parse(datas);
+            </script>
+            <script type="text/javascript" src="game.js"></script>
+            
+            
+        </div>
+        
+        <div id='form'></div>
+        
+        <script language='javascript'>
+            if(window.location.search.substring(1) == "") {
+                document.getElementById("form").innerHTML = "<form action='#' method='get' ><input type='text' name='pseudo' id='pseudo' placeholder='pseudo' value='pseudo' /><input type='submit' /></form>";
+            }
+        </script>
+        
+        <div id="dragdropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="images/DragonBall.png" alt="dragonball" draggable="true" ondragstart="drag(event)">
+            <img src="images/DropZone.png" alt="dropzone">
+        </div>
+        
+        <footer>
+            <img src="images/logo.png" alt="HES SO" class="hes">
+            
+            <div class="rules">
+                <p>Click on the section you want and follow the insctuctions in game </p>
+            </div>
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0IlaNjSS7lU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <br>
+            <br>
+            
+            <p class="hours">HES SO Projet : 265 hours - 2020</p>
+            
+            <br>
+            <br>
+            
+            <h4>
+            <a href="https://www.linkedin.com/in/nicolas-constantin-561411171/" target="_blank">Nicolas Constantin</a>
+             - 
+            <a href="https://www.linkedin.com/in/diogo-d-almeida-349a45171/" target="_blank">Diogo D'Almeida</a>
+             - 
+            <a href="https://www.linkedin.com/in/sarah-morard-33ba45171/" target="_blank">Sarah Morard</a>
+            </h4>
+            
+        </footer>
+        
+        
+    </body>
+
+</html>

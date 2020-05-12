@@ -1,0 +1,120 @@
+.hes {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    max-width: 200px;
+}
+
+header, footer {
+    text-align: center;
+}
+
+.rules {
+    margin-top: 20px;
+    margin-bottom: 28px;
+    font-size: 24px;
+}
+
+.hours {
+    font-size: 30px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+h4 {
+    margin-top: -8px;
+    font-size: 12px;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+}
+
+.workspace {
+    background-image: url("images/hes.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    background-color: #111;
+    color: white;
+}
+
+
+
+#dragdropzone{
+    display: flex;
+    justify-content:space-around;
+    padding-left: 35%;
+    padding-right: 35%;
+}
+
+#forSmallScreen {
+    display: none;
+    color: white;
+    height: 50%;
+}
+
+/*for tablet*/
+@media screen and (max-width: 991px) {
+        h1 {
+            text-align: left;
+        }
+
+        footer {
+            padding-top: 10px;
+            margin-bottom: -10px;
+        }
+    
+    .workspace, #form, #dropzone {
+        display: none;
+    }
+    
+    #forSmallScreen{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*for mobile phone*/
+@media screen and (max-width: 749px) {
+        h1 {
+            text-align: center;
+        }
+
+        footer {
+            padding-top: 10px;
+            margin-bottom: -10px;
+        }
+    
+    .workspace, #form, #dropzone {
+        display: none;
+    }
+    
+    #forSmallScreen{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hes {
+        position: inherit;
+        max-width: 200px;
+    }
+}
